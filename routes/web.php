@@ -12,4 +12,8 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
+Route::get('/tkd-registration', function () {
+    return view('tkd.registration');
+});
+
 require __DIR__.'/auth.php';
