@@ -48,8 +48,6 @@
                         <option value="">Select Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
-                        <option value="other">Other</option>
-                        <option value="prefer_not_to_say">Prefer not to say</option>
                     </select>
                     @error('gender')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -62,7 +60,7 @@
                 <!-- Weight -->
                 <div>
                     <label for="weight" class="block text-sm font-medium text-gray-700 mb-2">
-                        Weight (kg) <span class="text-red-500">*</span>
+                        Weight (lbs) <span class="text-red-500">*</span>
                     </label>
                     <input type="number" step="0.01" id="weight" wire:model.blur="weight"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition @error('weight') border-red-500 @enderror">
@@ -74,7 +72,7 @@
                 <!-- Height -->
                 <div>
                     <label for="height" class="block text-sm font-medium text-gray-700 mb-2">
-                        Height (cm) <span class="text-red-500">*</span>
+                        Height (in) <span class="text-red-500">*</span>
                     </label>
                     <input type="number" step="0.01" id="height" wire:model.blur="height"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition @error('height') border-red-500 @enderror">
