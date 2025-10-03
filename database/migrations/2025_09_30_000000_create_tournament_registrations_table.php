@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->integer('age');
             $table->enum('gender', ['male', 'female']);
-            $table->decimal('weight', 5, 2); // in kg or lbs (e.g., 175.50)
-            $table->decimal('height', 5, 2); // in cm or inches (e.g., 180.50)
+            $table->decimal('weight', 5, 2); // lbs (e.g., 175.50)
+            $table->decimal('height', 5, 2); // in inches (e.g., 180.50)
             $table->string('belt_rank');
             $table->string('school_name');
             $table->timestamps();

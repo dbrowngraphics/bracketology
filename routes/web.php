@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WeightClassListController;
 
 Route::view('/', 'welcome');
 
@@ -15,5 +16,8 @@ Route::view('profile', 'profile')
 Route::get('/tkd-registration', function () {
     return view('tkd.registration');
 })->middleware('auth');
+
+Route::get('/weight-class-list', [WeightClassListController::class, 'index'])
+    ->name('weight-class.index');
 
 require __DIR__ . '/auth.php';
