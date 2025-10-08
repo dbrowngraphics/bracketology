@@ -18,7 +18,8 @@ return new class extends Migration
             $table->enum('gender', ['male', 'female']);
             $table->decimal('weight', 5, 2); // lbs (e.g., 175.50)
             $table->decimal('height', 5, 2); // in inches (e.g., 180.50)
-            $table->string('belt_rank');
+            // Add foreign key to belts
+            $table->foreignId('belt_id')->nullable()->constrained('belts')->nullOnDelete();
             $table->string('school_name');
             $table->timestamps();
         });

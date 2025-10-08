@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Belt;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
@@ -10,6 +11,9 @@ class TournamentRegistrationsSeeder extends Seeder
 {
     public function run()
     {
+        $belts = Belt::all();
+        $beltCount = count($belts);
+
         $faker = Faker::create();
 
         $registrations = [];
@@ -43,16 +47,7 @@ class TournamentRegistrationsSeeder extends Seeder
                 'gender' => $gender,
                 'weight' => round($weightLbs, 2),
                 'height' => round($heightInches, 2),
-                'belt_rank' => $faker->randomElement([
-                    'White',
-                    'Yellow',
-                    'Orange',
-                    'Green',
-                    'Blue',
-                    'Purple',
-                    'Brown',
-                    'Black'
-                ]),
+                'belt_id' => rand(1, $beltCount),
                 'school_name' => $faker->company . " Academy",
                 'created_at' => now(),
                 'updated_at' => now(),
